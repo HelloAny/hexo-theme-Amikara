@@ -1,0 +1,33 @@
+<footer>
+    <% if (site.data.footer){ %>
+    <div class="footers">
+        <div class="footer">
+            <div class="footer-list">
+                <h3>TAGS:</h3>
+                <ul>
+                    <% for ( var name in site.data.footer ) { %>
+                    <li>
+                        <a href="<%= site.data.footer[name] %>"><%= name %></a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>LINKS:</h3>
+                <ul class="footer-friendLinks">
+                    <% for ( var name in site.data.links ) { %>
+                    <li>
+                        <a href="<%= site.data.links[name] %>"><%= name %></a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright © <a href="">AmiKara</a> 2019| </p>
+            <p><i>AmiKara</i> - A Hexo theme made by <a href="">AmiKara</a></p>
+            <div><b><i>备案</i>|</b>浙ICP备19035018号-1</div>
+        </div>
+    </div>
+    <% } %>
+</footer>

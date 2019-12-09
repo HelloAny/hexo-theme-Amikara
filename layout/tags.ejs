@@ -1,0 +1,46 @@
+<!-- Main Content -->
+<section class="tags">
+    <div class="tags-container">
+        <div class="tags-post">
+            <!-- 标签云 -->
+            <div id='tag_cloud' class="tags-tag">
+                <% site.tags.map(function(tag){  %>
+                <a href="#<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>"><%= tag.name %></a>
+                <% }) %>
+            </div>
+
+            <!-- 标签列表 -->
+            <div class="tags-content">
+                <% site.tags.map(function(tag){  %>
+                <div class="tags-tag-list">
+                    <span class="tags-tags-index" id="<%= tag.name %>">
+                        <svg class="tags-icon" viewBox="0 0 1027 1024">
+                            <path
+                                d="M96.82432 0C43.74016 0 0.47104 43.26912 0.47104 96.22016v288.53248c0 52.81792 30.61248 126.82752 68.19328 164.28544l447.8976 446.86848c37.4528 37.44768 98.80064 37.44768 136.25856 0l345.61536-344.84224c37.4528-37.45792 37.4528-98.67776 0-136.13056l-447.77472-446.8736C513.21344 30.61248 439.08096 0 386.12992 0H96.82432z m128.11776 320.04608c-53.08416 0-96.22016-43.00288-96.22016-95.95392 0-52.96128 43.136-95.96416 96.22016-95.96416 53.08416 0 96.22016 43.00288 96.22016 95.96416-0.128 52.9408-43.136 95.95392-96.22016 95.95392z"
+                                fill="#515151" p-id="2910"></path>
+                        </svg><span class="tags-text"><%= tag.name %></span>
+                    </span>
+                    <% tag.posts.map(function(post){  %>
+                    <div class="tags-preview">
+                        <a href="<%- config.root %><%- post.path %>">
+                            <h2 class="tags-post-title">
+                                +<span class="tags-post-retitle">[<%- tag.name %>]</span>
+                                <%- post.title || "Untitled" %>
+                            </h2>
+                            <% if (post.subtitle && post.subtitle.length) { %>
+                            <h3 class="tags-subtitle">
+                                <%- post.subtitle %>
+                            </h3>
+                            <% } %>
+                        </a>
+                    </div>
+                    <hr>
+                    <% }) %>
+                </div>
+                <% }) %>
+            </div>
+
+
+        </div>
+    </div>
+</section>

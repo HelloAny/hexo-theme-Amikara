@@ -1,0 +1,44 @@
+<html>
+<%- partial('_partial/head') %>
+
+<body>
+    <%- partial('_partial/header') %>
+    <main class="main">
+        <%- body %>
+    </main>
+</body>
+<%- partial('_partial/footer') %>
+
+</html>
+
+<script>
+    var sidebarFlag = false
+    const sidebar = document.getElementById('sidebar')
+
+    function toggleSidebar() {
+        if (sidebarFlag == true) {
+            setTimeout(function () {
+                sidebar.style.right = -500 + 'px'
+                sidebarFlag = false
+            }, 50)
+        } else {
+            setTimeout(function () {
+                sidebar.style.right = 0
+                sidebarFlag = true
+            }, 50)
+        }
+
+    }
+    document.onclick = function (event) {
+        if (event.target.id != "sidebar" && sidebarFlag == true) {
+            setTimeout(function () {
+                sidebar.style.right = -500 + 'px'
+                sidebarFlag = false
+            }, 50)
+        }
+    }
+    sidebar.addEventListener("click", function (event) {
+        event = event || window.event;
+        event.stopPropagation();
+    });
+</script>

@@ -1,0 +1,37 @@
+#sidebar
+  position: fixed;
+  top: 0;
+  right -500px
+  width: 500px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #444;
+  transition: all 500ms ease;
+  .sidebar-container
+    width 100% 
+    display: inline-block
+    position: relative;
+    overflow: auto;
+    height: 100%;
+    .sidebar-close
+      display: flex
+      justify-content flex-end
+      .icon
+        cursor pointer
+        width: 2.5rem;
+        height: 2.5rem
+        fill: currentColor;
+        overflow: hidden;
+        transition: .2s all
+        &:hover
+          transform: scale(1.1)
+    .sidebar-info
+      width: 80%
+      margin auto auto
+      color: #f5f5f5
+      text-align: center
+      div
+        padding 10px 0
+      .sidebar-info-title
+        font-size 2rem
